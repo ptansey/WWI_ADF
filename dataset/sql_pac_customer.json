@@ -1,0 +1,126 @@
+{
+	"name": "sql_pac_customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ADDRESSDESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMISSIONSALESGROUPNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRYORREGIONID",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "CREDITLIMIT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURRENCY",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERGROUP",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERGROUPNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERINDUSTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERREGION",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERSNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICINGANDDELIVERYONHOLD_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SALESGROUP",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "TERMSOFPAYMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIPPOSTALCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICINGANDDELIVERYONHOLD",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_Customer_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Customer]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

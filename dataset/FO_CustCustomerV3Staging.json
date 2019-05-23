@@ -1,0 +1,1035 @@
+{
+	"name": "FO_CustCustomerV3Staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "D365 Staging DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(FO) D365 Staging DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "PARTYTYPE",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSBOOKS",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSLOCATIONROLES",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTEMAILPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFAXPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTPHONEPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTTELEXPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTURLPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFACEBOOKPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTLINKEDINPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTTWITTERPURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "EMPLOYEERESPONSIBLENUMBER",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTDIMENSIONDISPLAYVALUE",
+				"type": "String"
+			},
+			{
+				"name": "ELECTRONICLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSCOUNTRYREGIONISOCODE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONISOCODE",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCOUNTRYREGIONISOCODE",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "CUSTOMERACCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATIONNAME",
+				"type": "String"
+			},
+			{
+				"name": "NAMEALIAS",
+				"type": "String"
+			},
+			{
+				"name": "KNOWNAS",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATIONNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATIONNUMBEROFEMPLOYEES",
+				"type": "Int32"
+			},
+			{
+				"name": "ORGANIZATIONABCCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "ORGANIZATIONPHONETICNAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONINITIALS",
+				"type": "String"
+			},
+			{
+				"name": "PERSONFIRSTNAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONMIDDLENAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONLASTNAMEPREFIX",
+				"type": "String"
+			},
+			{
+				"name": "PERSONLASTNAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONPROFESSIONALTITLE",
+				"type": "String"
+			},
+			{
+				"name": "PERSONPROFESSIONALSUFFIX",
+				"type": "String"
+			},
+			{
+				"name": "PERSONPHONETICFIRSTNAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONPHONETICLASTNAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONPHONETICMIDDLENAME",
+				"type": "String"
+			},
+			{
+				"name": "PERSONGENDER",
+				"type": "Int32"
+			},
+			{
+				"name": "PERSONMARITALSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "PERSONANNIVERSARYDAY",
+				"type": "Int32"
+			},
+			{
+				"name": "PERSONANNIVERSARYMONTH",
+				"type": "Int32"
+			},
+			{
+				"name": "PERSONANNIVERSARYYEAR",
+				"type": "Int32"
+			},
+			{
+				"name": "PERSONCHILDRENNAMES",
+				"type": "String"
+			},
+			{
+				"name": "PERSONHOBBIES",
+				"type": "String"
+			},
+			{
+				"name": "PARTYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "LANGUAGEID",
+				"type": "String"
+			},
+			{
+				"name": "FULLPRIMARYADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSCOUNTY",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSDISTRICTNAME",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSLATITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ADDRESSLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSLONGITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ADDRESSSTATE",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "ADDRESSVALIDFROM",
+				"type": "DateTime"
+			},
+			{
+				"name": "ADDRESSVALIDTO",
+				"type": "DateTime"
+			},
+			{
+				"name": "ADDRESSBRAZILIANCNPJORCPF",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESSBRAZILIANIE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTEMAIL",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTEMAILDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTEMAILISIM",
+				"type": "Int32"
+			},
+			{
+				"name": "PRIMARYCONTACTFAX",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFAXDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFAXEXTENSION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTPHONE",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTPHONEDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTPHONEEXTENSION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTPHONEISMOBILE",
+				"type": "Int32"
+			},
+			{
+				"name": "PRIMARYCONTACTTELEX",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTTELEXDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTURL",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTURLDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFACEBOOK",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTFACEBOOKDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTLINKEDIN",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTLINKEDINDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTTWITTERDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PRIMARYCONTACTTWITTER",
+				"type": "String"
+			},
+			{
+				"name": "ISONETIMECUSTOMER",
+				"type": "Int32"
+			},
+			{
+				"name": "STATISTICSGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTSTATEMENT",
+				"type": "Int32"
+			},
+			{
+				"name": "IDENTIFICATIONNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PARTYCOUNTRY",
+				"type": "String"
+			},
+			{
+				"name": "PARTYSTATE",
+				"type": "String"
+			},
+			{
+				"name": "VENDORACCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "FEDERALINDICATOR",
+				"type": "Int32"
+			},
+			{
+				"name": "FEDERALAGENCYLOCATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "FEDERALCOMMENTS",
+				"type": "String"
+			},
+			{
+				"name": "IRS1099CINDICATOR",
+				"type": "Int32"
+			},
+			{
+				"name": "CONTACTPERSONID",
+				"type": "String"
+			},
+			{
+				"name": "LINEOFBUSINESSID",
+				"type": "String"
+			},
+			{
+				"name": "SALESSEGMENTID",
+				"type": "String"
+			},
+			{
+				"name": "SALESSUBSEGMENTID",
+				"type": "String"
+			},
+			{
+				"name": "SALESDISTRICT",
+				"type": "String"
+			},
+			{
+				"name": "COMPANYCHAIN",
+				"type": "String"
+			},
+			{
+				"name": "SALESCURRENCYCODE",
+				"type": "String"
+			},
+			{
+				"name": "SALESMEMO",
+				"type": "String"
+			},
+			{
+				"name": "ONHOLDSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "CREDITLIMITISMANDATORY",
+				"type": "Int32"
+			},
+			{
+				"name": "CREDITRATING",
+				"type": "String"
+			},
+			{
+				"name": "CREDITLIMIT",
+				"type": "Decimal"
+			},
+			{
+				"name": "COLLECTIONSCONTACTPERSONID",
+				"type": "String"
+			},
+			{
+				"name": "ISEXCLUDEDFROMINTERESTCHARGECALCULATION",
+				"type": "Int32"
+			},
+			{
+				"name": "ISEXCLUDEDFROMCOLLECTIONFEECALCULATION",
+				"type": "Int32"
+			},
+			{
+				"name": "CHARGESGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SITEID",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEID",
+				"type": "String"
+			},
+			{
+				"name": "ITEMCUSTOMERGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "COMMISSIONCUSTOMERGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "COMMISSIONSALESGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESORDERPOOLID",
+				"type": "String"
+			},
+			{
+				"name": "SALESACCOUNTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORDERENTRYDEADLINE",
+				"type": "String"
+			},
+			{
+				"name": "MULTILINEDISCOUNTCODE",
+				"type": "String"
+			},
+			{
+				"name": "TOTALDISCOUNTCODE",
+				"type": "String"
+			},
+			{
+				"name": "DISCOUNTPRICEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "LINEDISCOUNTCODE",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERREBATEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERTMAGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SUPPLEMENTARYITEMGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTTERMS",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTMETHOD",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTSPECIFICATION",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTSCHEDULE",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTDAY",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTCASHDISCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTTERMSBASEDAYS",
+				"type": "Int32"
+			},
+			{
+				"name": "PAYMENTBANKACCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTFACTORINGACCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTIDTYPE",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTUSECASHDISCOUNT",
+				"type": "Int32"
+			},
+			{
+				"name": "CENTRALBANKPURPOSECODE",
+				"type": "String"
+			},
+			{
+				"name": "CENTRALBANKPURPOSENOTES",
+				"type": "String"
+			},
+			{
+				"name": "CREDITCARDADDRESSVERIFICATION",
+				"type": "Int32"
+			},
+			{
+				"name": "CREDITCARDADDRESSVERIFICATIONISAUTHORIZATIONVOIDEDONFAILURE",
+				"type": "Int32"
+			},
+			{
+				"name": "CREDITCARDADDRESSVERIFICATIONLEVEL",
+				"type": "Int32"
+			},
+			{
+				"name": "CREDITCARDCVC",
+				"type": "Int32"
+			},
+			{
+				"name": "WAREHOUSEISASNGENERATED",
+				"type": "Int32"
+			},
+			{
+				"name": "WAREHOUSEISENTIRESHIPMENTFILLED",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTINVENTORYSTATUSID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEACCOUNT",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESS",
+				"type": "Int32"
+			},
+			{
+				"name": "NUMBERSEQUENCEGROUP",
+				"type": "String"
+			},
+			{
+				"name": "GIROTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "GIROTYPEFREETEXTINVOICE",
+				"type": "Int32"
+			},
+			{
+				"name": "GIROTYPEINTERESTNOTE",
+				"type": "Int32"
+			},
+			{
+				"name": "GIROTYPECOLLECTIONLETTER",
+				"type": "Int32"
+			},
+			{
+				"name": "GIROTYPEPROJINVOICE",
+				"type": "Int32"
+			},
+			{
+				"name": "GIROTYPEACCOUNTSTATEMENT",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYFREIGHTZONE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYTERMS",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYMODE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYREASON",
+				"type": "String"
+			},
+			{
+				"name": "DESTINATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "RECEIPTCALENDAR",
+				"type": "String"
+			},
+			{
+				"name": "SALESTAXGROUP",
+				"type": "String"
+			},
+			{
+				"name": "TAXEXEMPTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ISSALESTAXINCLUDEDINPRICES",
+				"type": "Int32"
+			},
+			{
+				"name": "PACKINGDUTYLICENSE",
+				"type": "String"
+			},
+			{
+				"name": "FISCALCODE",
+				"type": "String"
+			},
+			{
+				"name": "PACKINGMATERIALFEELICENSENUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ISELECTRONICINVOICE",
+				"type": "Int32"
+			},
+			{
+				"name": "ELECTRONICINVOICEEAN",
+				"type": "String"
+			},
+			{
+				"name": "ISFREIGHTACCRUED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISEXPRESSBILLOFLADINGACCEPTED",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESRETURNTAXGROUP",
+				"type": "String"
+			},
+			{
+				"name": "ISWITHHOLDINGTAXCALCULATED",
+				"type": "Int32"
+			},
+			{
+				"name": "WITHHOLDINGTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "FRENCHSIRET",
+				"type": "String"
+			},
+			{
+				"name": "NAFCODE",
+				"type": "String"
+			},
+			{
+				"name": "COMPANYTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "CURPNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "RFCNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "STATEINSCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "TAXREGISTRATIONID",
+				"type": "String"
+			},
+			{
+				"name": "CONSOLIDATIONDAY",
+				"type": "Int32"
+			},
+			{
+				"name": "NATIONALREGISTRYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "RELIEFGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "CALCULATEWITHHOLDINGTAX",
+				"type": "Int32"
+			},
+			{
+				"name": "FOREIGNCUSTOMER",
+				"type": "Int32"
+			},
+			{
+				"name": "TCSGROUP",
+				"type": "String"
+			},
+			{
+				"name": "TDSGROUP",
+				"type": "String"
+			},
+			{
+				"name": "PREFERENTIALCUSTOMER",
+				"type": "Int32"
+			},
+			{
+				"name": "NATUREOFASSESSEE",
+				"type": "Int32"
+			},
+			{
+				"name": "PANNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PANREFERENCENUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PANSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "CUSTOMERPAYMENTFINECODE",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERPAYMENTFINANCIALINTERESTCODE",
+				"type": "String"
+			},
+			{
+				"name": "BRAZILIANCCM",
+				"type": "String"
+			},
+			{
+				"name": "BRAZILIANCNAE",
+				"type": "String"
+			},
+			{
+				"name": "BRAZILIANCNPJORCPF",
+				"type": "String"
+			},
+			{
+				"name": "ISFINALUSER",
+				"type": "Int32"
+			},
+			{
+				"name": "CUSTOMERWITHHOLDINGCONTRIBUTIONTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "ISINCOMINGFISCALDOCUMENTGENERATED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISICMSCONTRIBUTOR",
+				"type": "Int32"
+			},
+			{
+				"name": "BRAZILIANIE",
+				"type": "String"
+			},
+			{
+				"name": "BRAZILIANINSSCEI",
+				"type": "String"
+			},
+			{
+				"name": "BRAZILIANNIT",
+				"type": "String"
+			},
+			{
+				"name": "ISSERVICEDELIVERYADDRESSBASED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISINSUFRAMAREGION",
+				"type": "Int32"
+			},
+			{
+				"name": "SUFRAMANUMBER",
+				"type": "String"
+			},
+			{
+				"name": "HASSUFRAMADISCOUNTPISANDCOFINS",
+				"type": "Int32"
+			},
+			{
+				"name": "FOREIGNERID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTIONPRESENCETYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "WRITEOFFREASON",
+				"type": "String"
+			},
+			{
+				"name": "EXPORTSALE",
+				"type": "Int32"
+			},
+			{
+				"name": "BIRTHCOUNTYCODE",
+				"type": "String"
+			},
+			{
+				"name": "BIRTHPLACE",
+				"type": "String"
+			},
+			{
+				"name": "RESIDENCEFOREIGNCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTY",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDISTRICTNAME",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSLATITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSLONGITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTATE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSVALIDFROM",
+				"type": "DateTime"
+			},
+			{
+				"name": "DELIVERYADDRESSVALIDTO",
+				"type": "DateTime"
+			},
+			{
+				"name": "INVOICEADDRESSDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "INVOICEADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCOUNTY",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSDISTRICTNAME",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSLATITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "INVOICEADDRESSLONGITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "INVOICEADDRESSLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSSTATE",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSVALIDFROM",
+				"type": "DateTime"
+			},
+			{
+				"name": "INVOICEADDRESSVALIDTO",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISEXTERNALLYMAINTAINED",
+				"type": "Int32"
+			},
+			{
+				"name": "MERCHANTID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTECOMMERCEOPERATOR",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "FULFILLMENTPOLICYNAME",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[CustCustomerV3Staging]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

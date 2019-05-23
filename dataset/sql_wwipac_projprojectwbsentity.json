@@ -1,0 +1,54 @@
+{
+	"name": "sql_wwipac_projprojectwbsentity",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACTIVITYDESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJECTID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WBSID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WWIProjectAccountingCube_ProjProjectWBSEntity]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

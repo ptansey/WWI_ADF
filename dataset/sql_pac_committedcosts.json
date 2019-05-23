@@ -1,0 +1,189 @@
+{
+	"name": "sql_pac_committedcosts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CATEGORYID",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMITTEDAMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COMMITTEDCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COMMITTEDCOSTS_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "COMMITTEDCOSTUPDATESQUANTITY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COMMITTEDDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "COMMITTEDHOURCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COMMITTEDITEMCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURRENCYCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJGROUPID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJINVOICEPROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RESOURCE_",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RESOURCECATEGORY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANSACTIONTYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "VENDACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTIONTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMITTEDCOSTS",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_Vendor_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_Projects_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_Customer_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectContracts_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_Activity_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectCategory_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectGroups_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedCostsView_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_CommittedCosts]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

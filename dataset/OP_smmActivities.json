@@ -1,0 +1,227 @@
+{
+	"name": "OP_smmActivities",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OnPremDataMart",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(OP) On Prem Datamart"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ACTIVITYSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "ACTUALWORK",
+				"type": "Decimal"
+			},
+			{
+				"name": "ALLDAY",
+				"type": "Int32"
+			},
+			{
+				"name": "BILLINGINFORMATION",
+				"type": "String"
+			},
+			{
+				"name": "CATEGORY",
+				"type": "Int32"
+			},
+			{
+				"name": "CLOSED",
+				"type": "Int32"
+			},
+			{
+				"name": "CLOSEDBYPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "COMPLETEDPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DATEANDTIMECLOSED",
+				"type": "DateTime"
+			},
+			{
+				"name": "DISPATCHED",
+				"type": "Int32"
+			},
+			{
+				"name": "ENDDATETIME",
+				"type": "DateTime"
+			},
+			{
+				"name": "KEEPSYNCHRONIZED",
+				"type": "Int32"
+			},
+			{
+				"name": "LASTDATETIMEEDITED",
+				"type": "DateTime"
+			},
+			{
+				"name": "LOCATION",
+				"type": "String"
+			},
+			{
+				"name": "MASTERAPPOINTMENT",
+				"type": "Int32"
+			},
+			{
+				"name": "MILEAGE",
+				"type": "String"
+			},
+			{
+				"name": "MODIFIED",
+				"type": "Int32"
+			},
+			{
+				"name": "NOTES",
+				"type": "String"
+			},
+			{
+				"name": "ORIGINALSTARTDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "OUTLOOKCATEGORIES",
+				"type": "String"
+			},
+			{
+				"name": "OUTLOOKENTRYID",
+				"type": "String"
+			},
+			{
+				"name": "OUTLOOKRESOURCES",
+				"type": "String"
+			},
+			{
+				"name": "OUTLOOKRESPONSEREQUESTED",
+				"type": "Int32"
+			},
+			{
+				"name": "OUTLOOKSHAREDOBJECTID",
+				"type": "String"
+			},
+			{
+				"name": "OUTLOOKTEXT",
+				"type": "String"
+			},
+			{
+				"name": "PHASEID",
+				"type": "String"
+			},
+			{
+				"name": "PLANID",
+				"type": "String"
+			},
+			{
+				"name": "PRIORITY",
+				"type": "Int32"
+			},
+			{
+				"name": "PURPOSE",
+				"type": "String"
+			},
+			{
+				"name": "RECURRENCESTATE",
+				"type": "Int32"
+			},
+			{
+				"name": "REMINDER",
+				"type": "Int32"
+			},
+			{
+				"name": "REMINDERDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "REMINDERMINUTES",
+				"type": "Int32"
+			},
+			{
+				"name": "RESPONSIBLEWORKERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "RESPONSIBILITYID",
+				"type": "String"
+			},
+			{
+				"name": "ROLE",
+				"type": "String"
+			},
+			{
+				"name": "SENSITIVITY",
+				"type": "Int32"
+			},
+			{
+				"name": "SHOWTIMEAS",
+				"type": "Int32"
+			},
+			{
+				"name": "SOURCEAPPLICATION",
+				"type": "String"
+			},
+			{
+				"name": "STARTDATETIME",
+				"type": "DateTime"
+			},
+			{
+				"name": "TEAMTASK",
+				"type": "Int32"
+			},
+			{
+				"name": "TEMPLATE",
+				"type": "Int32"
+			},
+			{
+				"name": "TOTALWORK",
+				"type": "Decimal"
+			},
+			{
+				"name": "TYPEID",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[smmActivities]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

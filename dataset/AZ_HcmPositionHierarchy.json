@@ -1,0 +1,67 @@
+{
+	"name": "AZ_HcmPositionHierarchy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(AZ) Azure SQL DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "VALIDFROM",
+				"type": "DateTime"
+			},
+			{
+				"name": "VALIDTO",
+				"type": "DateTime"
+			},
+			{
+				"name": "POSITIONID",
+				"type": "String"
+			},
+			{
+				"name": "PARENTPOSITIONID",
+				"type": "String"
+			},
+			{
+				"name": "HIERARCHYTYPENAME",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			},
+			{
+				"name": "RECID",
+				"type": "Int64"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[HcmPositionHierarchy]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

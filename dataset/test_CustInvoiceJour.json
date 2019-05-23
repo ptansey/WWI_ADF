@@ -1,0 +1,594 @@
+{
+	"name": "test_CustInvoiceJour",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AXDB on TEST",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ORDERACCOUNT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INVOICEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BACKORDER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BANKLCEXPORTLINE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BILLOFLADINGID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CASHDISC",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "CASHDISCBASEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CASHDISCCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CASHDISCDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CASHDISCPERCENT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "CONTACTPERSONID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "COVSTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CURRENCYCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUSTGROUP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUSTOMERREF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEFAULTDIMENSION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DELIVERYNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DELIVERYPOSTALADDRESS",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DIRECTDEBITMANDATE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DLVMODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DLVTERM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DOCUMENTDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DOCUMENTNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DUEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EINVOICEACCOUNTCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EINVOICELINESPECIFIC",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ENDDISC",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "ENDDISCMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "ENTERPRISENUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EUSALESLIST",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EXCHRATE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "EXCHRATESECONDARY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "FIXEDDUEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GIROTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INCLTAX",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INTERCOMPANYCOMPANYID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTERCOMPANYPOSTED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INTERCOMPANYPURCHID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTRASTATDISPATCH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTRASTATFULFILLMENTDATE_HU",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "INVENTLOCATIONID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INVOICEACCOUNT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INVOICEAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "INVOICEAMOUNTMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "INVOICEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "INVOICEPOSTALADDRESS",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "INVOICEROUNDOFF",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "INVOICEROUNDOFFMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "INVOICINGNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ISCORRECTION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LANGUAGEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEDGERVOUCHER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LISTCODE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MCRDUEAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "MCREMAIL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MCRPAYMAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "NUMBERSEQUENCEGROUP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ONACCOUNTAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "ONETIMECUSTOMER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PARMID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMDAYID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMENT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMENTSCHED",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POSTINGPROFILE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PREPAYMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRINTEDORIGINALS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRINTMGMTSITEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROFORMA",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PURCHASEORDER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QTY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "RCSALESLIST_UK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REASONTABLEREF",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECEIPTDATECONFIRMED_ES",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REFNUM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RETURNITEMNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RETURNREASONCODEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RETURNSTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REVERSECHARGEAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "REVERSEDRECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SALESBALANCE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SALESBALANCEMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SALESID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SALESORIGINID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SALESTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SHIPCARRIERBLINDSHIPMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCEDOCUMENTHEADER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SOURCEDOCUMENTLINE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SUMLINEDISC",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SUMLINEDISCMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SUMMARKUP",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SUMMARKUPMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SUMTAX",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SUMTAXMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "TAXGROUP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXINVOICESALESID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXITEMGROUP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXPRINTONINVOICE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TAXSPECIFYBYLINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSPORTATIONDOCUMENT",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRIANGULATION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UPDATED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VATNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOLUME",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "WEIGHT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 12
+			},
+			{
+				"name": "WORKERSALESTAKER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SENTELECTRONICALLY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROVISIONALASSESSMENT_IN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECVERSION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MODIFIEDDATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CREATEDDATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CREATEDBY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BISEDIPROCESS",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[CUSTINVOICEJOUR]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

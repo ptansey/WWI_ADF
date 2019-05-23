@@ -1,0 +1,55 @@
+{
+	"name": "sql_pac_resource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RESOURCE_",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCEID",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCENAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCETYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RESOURCETYPE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Resource]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

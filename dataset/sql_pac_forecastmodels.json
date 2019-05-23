@@ -1,0 +1,68 @@
+{
+	"name": "sql_pac_forecastmodels",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "FORECASTMODELS",
+				"type": "varchar"
+			},
+			{
+				"name": "ISDEFAULTMODELFORPROJECT_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MODEL",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SUBMODEL",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBMODELID",
+				"type": "varchar"
+			},
+			{
+				"name": "ISDEFAULTMODELFORPROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_ForecastModels_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_ForecastModels]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

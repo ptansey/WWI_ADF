@@ -1,0 +1,26 @@
+{
+	"name": "dl_PAC_actuals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageDV",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "0.csv",
+				"folderPath": "projectaccountingcube_actuals",
+				"container": "projectaccountingcube"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

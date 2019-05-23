@@ -1,0 +1,14 @@
+{
+	"name": "D365 Staging DB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Connection to Azure SQL DB staging from D365",
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "SecureString",
+				"value": "**********"
+			}
+		}
+	}
+}

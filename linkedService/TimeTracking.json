@@ -1,0 +1,16 @@
+{
+	"name": "TimeTracking",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "INF-DB02-DV-RCH",
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=INF-DB02-DV-RCH;initial catalog=TimeTracking;user id=dataloader",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNWQ4MWY1Yi0zM2RkLTQ1MTMtOTU2Mi1iZWIxNDFlMDhlNTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "OnPremDevDataGateway",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

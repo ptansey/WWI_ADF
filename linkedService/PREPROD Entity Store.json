@@ -1,0 +1,11 @@
+{
+	"name": "PREPROD Entity Store",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=1899d227-9068-4053-8133-8562ba590455.database.windows.net;initial catalog=db_d365opsprod_20181204_11052130_dd95;user id=axdwadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFOQS1ERjAxLURWLUFaUl9jZTg3M2QyYy1lOWNmLTRlM2MtODJhMi1iNjNmMjExODBiOTUiDQp9"
+		}
+	}
+}

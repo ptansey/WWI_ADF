@@ -1,0 +1,144 @@
+{
+	"name": "sql_wwipac_wwiprojects",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACTUALENDDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ARNOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMERACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "DIMENSION_",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ESTIMATEPROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "PARENTPROJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJECTCONTRACTID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTCONTROLLER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTMANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTTYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJVALUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SALESMANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "SORTFIELD1",
+				"type": "varchar"
+			},
+			{
+				"name": "SORTFIELD2",
+				"type": "varchar"
+			},
+			{
+				"name": "SORTFIELD3",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WIPNOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "WORKERRESPONSIBLE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WORKERRESPONSIBLEFINANCIAL",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WORKERRESPONSIBLESALES",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WWIPROJECTS",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTTYPE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WWIProjectAccountingCube_WWIProjects]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

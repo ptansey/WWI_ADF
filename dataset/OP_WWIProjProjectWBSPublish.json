@@ -1,0 +1,123 @@
+{
+	"name": "OP_WWIProjProjectWBSPublish",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OnPremDataMart",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(OP) On Prem Datamart"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "PROJECTID",
+				"type": "String"
+			},
+			{
+				"name": "WBSID",
+				"type": "String"
+			},
+			{
+				"name": "NOTE",
+				"type": "String"
+			},
+			{
+				"name": "TASK",
+				"type": "String"
+			},
+			{
+				"name": "PREDECESSORS",
+				"type": "String"
+			},
+			{
+				"name": "CATEGORY",
+				"type": "String"
+			},
+			{
+				"name": "EFFORT",
+				"type": "Decimal"
+			},
+			{
+				"name": "STARTDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ENDDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "DURATION",
+				"type": "Decimal"
+			},
+			{
+				"name": "NUMBEROFRESOURCES",
+				"type": "Decimal"
+			},
+			{
+				"name": "ROLE",
+				"type": "String"
+			},
+			{
+				"name": "ACTIVITYSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "ISTASKCLOSED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISTASKMANDATORY",
+				"type": "Int32"
+			},
+			{
+				"name": "TASKPRIORITY",
+				"type": "Int32"
+			},
+			{
+				"name": "ACTIVITYTASKTIMETYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "ISCATEGORYMANDATORY",
+				"type": "Int32"
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WWIProjProjectWBSPublish]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

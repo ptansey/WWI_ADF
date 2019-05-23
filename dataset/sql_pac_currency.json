@@ -1,0 +1,50 @@
+{
+	"name": "sql_pac_currency",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CURRENCY",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCYNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ISOCURRENCYCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SYMBOL",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Currency]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

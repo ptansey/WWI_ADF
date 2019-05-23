@@ -1,0 +1,211 @@
+{
+	"name": "TT_SystemUser",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TimeTracking",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(TT) Time Tracking"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "PERSONNAME",
+				"type": "String"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTCOUNTRYREGION",
+				"type": "String"
+			},
+			{
+				"name": "DOCUMENTHANDLINGACTIVE",
+				"type": "Int32"
+			},
+			{
+				"name": "SHOWATTACHMENTSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "EMAIL",
+				"type": "String"
+			},
+			{
+				"name": "SENDALERTASEMAILMESSAGE",
+				"type": "Int32"
+			},
+			{
+				"name": "EVENTPOLLFREQUENCY",
+				"type": "Int32"
+			},
+			{
+				"name": "EVENTPOPUPDISPLAYWHEN",
+				"type": "Int32"
+			},
+			{
+				"name": "EVENTPOPUPLINKDESTINATION",
+				"type": "Int32"
+			},
+			{
+				"name": "EVENTPOPUPS",
+				"type": "Int32"
+			},
+			{
+				"name": "EVENTWORKFLOWSHOWPOPUP",
+				"type": "Int32"
+			},
+			{
+				"name": "SHOWNOTIFICATIONSINTHEMICROSOFTDYNAMICSAX7CLIENT",
+				"type": "Int32"
+			},
+			{
+				"name": "SENDNOTIFICATIONSINEMAIL",
+				"type": "Int32"
+			},
+			{
+				"name": "MARKEMPTYLINKS",
+				"type": "Int32"
+			},
+			{
+				"name": "USERID",
+				"type": "String"
+			},
+			{
+				"name": "LANGUAGE",
+				"type": "String"
+			},
+			{
+				"name": "SQMENABLED",
+				"type": "Int32"
+			},
+			{
+				"name": "SQMGUID",
+				"type": "Guid"
+			},
+			{
+				"name": "WORKFLOWLINEITEMNOTIFICATIONFORMAT",
+				"type": "Int32"
+			},
+			{
+				"name": "DENSITY",
+				"type": "Int32"
+			},
+			{
+				"name": "THEME",
+				"type": "Int32"
+			},
+			{
+				"name": "STARTPAGE",
+				"type": "String"
+			},
+			{
+				"name": "EMAILPROVIDERID",
+				"type": "String"
+			},
+			{
+				"name": "USERNAME",
+				"type": "String"
+			},
+			{
+				"name": "ENABLED",
+				"type": "Int32"
+			},
+			{
+				"name": "COMPANY",
+				"type": "String"
+			},
+			{
+				"name": "AUTOLOGOFF",
+				"type": "Int32"
+			},
+			{
+				"name": "NETWORKDOMAIN",
+				"type": "String"
+			},
+			{
+				"name": "ALIAS",
+				"type": "String"
+			},
+			{
+				"name": "EXTERNALUSER",
+				"type": "Int32"
+			},
+			{
+				"name": "USERINFO_LANGUAGE",
+				"type": "String"
+			},
+			{
+				"name": "HELPLANGUAGE",
+				"type": "String"
+			},
+			{
+				"name": "PREFERREDTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "PREFERREDCALENDAR",
+				"type": "Int32"
+			},
+			{
+				"name": "HOMEPAGEREFRESHDURATION",
+				"type": "Int32"
+			},
+			{
+				"name": "GLOBALLISTPAGELINKMODE",
+				"type": "Int32"
+			},
+			{
+				"name": "GLOBALEXCELEXPORTMODE",
+				"type": "Int32"
+			},
+			{
+				"name": "USERINFO_DEFAULTPARTITION",
+				"type": "Int32"
+			},
+			{
+				"name": "GLOBALEXCELEXPORTFILEPATH",
+				"type": "String"
+			},
+			{
+				"name": "PREFERREDLOCALE",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "AUTOMATICURLUPDATE",
+				"type": "Int32"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[SystemUser]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

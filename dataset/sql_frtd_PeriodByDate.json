@@ -1,0 +1,107 @@
+{
+	"name": "sql_frtd_PeriodByDate",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "FINANCIALREPORTINGPERIODBYDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FISCALCALENDAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "FISCALCALENDARCOUNT",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "FISCALCALENDARPERIOD",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "FISCALCALENDARYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "GREGORIANDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERIODBYYEARSEQUENCE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERIODNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PERIODSEQUENCE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERIODSHORTNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "QUARTER_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUARTERSEQUENCE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "YEARNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "YEARSEQUENCE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUARTER",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[FinancialReportingTransactionData_FinancialReportingPeriodByDate]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

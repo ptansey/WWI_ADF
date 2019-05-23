@@ -1,0 +1,61 @@
+{
+	"name": "GetTablesAndTriggerCopy",
+	"properties": {
+		"activities": [
+			{
+				"name": "LookupTableList",
+				"description": "get custom list of teables from entity store (_tablestocopy)",
+				"type": "Lookup",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT 'dbo' as TABLE_SCHEMA, sourcetable AS TABLE_NAME FROM dbo._tablesToCopy",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "dynSource",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "TriggerCopy",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "LookupTableList",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "IterateAndCopyTables",
+						"type": "PipelineReference"
+					},
+					"parameters": {
+						"tableList": {
+							"value": "@activity('LookupTableList').output.value",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Copy EntityStore"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

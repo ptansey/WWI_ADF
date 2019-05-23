@@ -1,0 +1,345 @@
+{
+	"name": "sql_PAC_actuals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTUALACCRUEDLOSS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALACCRUEDREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCASHINFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCASHOUTFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCONSUMPTION",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCONSUMPTIONCOSTEXPENSE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCONSUMPTIONCOSTHOURS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCONSUMPTIONCOSTITEM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCOSTCOMMITTED",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCOSTEXPENSE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCOSTHOUR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALCOSTITEM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALGROSSMARGIN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALGROSSWIPCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALHOURS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALINVOICEDONACCOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALINVOICEDREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALNETCASHFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALNETWIP",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALPAYROLLALLOCATION",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALS_VALUE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACTUALWIPCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALWIPINVOICEDONACCOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACTUALWIPSALES",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CATEGORYID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLITEMID",
+				"type": "varchar"
+			},
+			{
+				"name": "LEDGERTRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PARTITION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POSTINGTYPE_VALUE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROJFUNDINGSOURCE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROJGROUPID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJINVOICEPROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJTRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROJTRANSTYPE_VALUE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RECID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RESOURCE_",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RESOURCECATEGORY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTIONTYPE_VALUE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POSTINGTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTIONTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTUALS",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJTRANSTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectCategory_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_Projects_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_Customer_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_Activity_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectGroups_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedCostsView_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectContracts_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectFundingSource_FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProjectAccountingCube_ReleasedProducts_FK",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Actuals]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

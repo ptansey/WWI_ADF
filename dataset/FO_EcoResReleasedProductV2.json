@@ -1,0 +1,843 @@
+{
+	"name": "FO_EcoResReleasedProductV2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "D365 Staging DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(FO) D365 Staging DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "PRODUCTSUBTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTLEDGERDIMENSIONDISPLAYVALUE",
+				"type": "String"
+			},
+			{
+				"name": "ARETRANSPORTATIONMANAGEMENTPROCESSESENABLED",
+				"type": "Int32"
+			},
+			{
+				"name": "PACKAGEHANDLINGTIME",
+				"type": "Int32"
+			},
+			{
+				"name": "COSTCHARGESQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESCHARGESQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASECHARGESQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PKWIUCODE",
+				"type": "String"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTSEARCHNAME",
+				"type": "String"
+			},
+			{
+				"name": "ITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "SEARCHNAME",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ITEMMODELGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "STORAGEDIMENSIONGROUPNAME",
+				"type": "String"
+			},
+			{
+				"name": "TRACKINGDIMENSIONGROUPNAME",
+				"type": "String"
+			},
+			{
+				"name": "INVENTORYRESERVATIONHIERARCHYNAME",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTORDERTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "MARGINABCCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "REVENUEABCCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "CARRYINGCOSTABCCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "VALUEABCCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "ALTERNATIVEPRODUCTUSAGECONDITION",
+				"type": "Int32"
+			},
+			{
+				"name": "ALTERNATIVEPRODUCTCONFIGURATIONID",
+				"type": "String"
+			},
+			{
+				"name": "ALTERNATIVEPRODUCTCOLORID",
+				"type": "String"
+			},
+			{
+				"name": "ALTERNATIVEPRODUCTSIZEID",
+				"type": "String"
+			},
+			{
+				"name": "ALTERNATIVEPRODUCTSTYLEID",
+				"type": "String"
+			},
+			{
+				"name": "ALTERNATIVEITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "WILLINVENTORYISSUEAUTOMATICALLYREPORTASFINISHED",
+				"type": "Int32"
+			},
+			{
+				"name": "BATCHMERGEDATECALCULATIONMETHOD",
+				"type": "Int32"
+			},
+			{
+				"name": "BATCHNUMBERGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "COSTCALCULATIONGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "BOMLEVEL",
+				"type": "Int32"
+			},
+			{
+				"name": "BOMUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "FLUSHINGPRINCIPLE",
+				"type": "Int32"
+			},
+			{
+				"name": "WILLINVENTORYRECEIPTIGNOREFLUSHINGPRINCIPLE",
+				"type": "Int32"
+			},
+			{
+				"name": "COMMISSIONPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "COSTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISUNITCOSTAUTOMATICALLYUPDATED",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTIONCONSUMPTIONDENSITYCONVERSIONFACTOR",
+				"type": "Decimal"
+			},
+			{
+				"name": "PRODUCTIONCONSUMPTIONDEPTHCONVERSIONFACTOR",
+				"type": "Decimal"
+			},
+			{
+				"name": "PRODUCTIONCONSUMPTIONWIDTHCONVERSIONFACTOR",
+				"type": "Decimal"
+			},
+			{
+				"name": "PRODUCTIONCONSUMPTIONHEIGHTCONVERSIONFACTOR",
+				"type": "Decimal"
+			},
+			{
+				"name": "GROSSDEPTH",
+				"type": "Decimal"
+			},
+			{
+				"name": "GROSSPRODUCTHEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "GROSSPRODUCTWIDTH",
+				"type": "Decimal"
+			},
+			{
+				"name": "PRODUCTVOLUME",
+				"type": "Decimal"
+			},
+			{
+				"name": "NETPRODUCTWEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "BUYERGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISUNITCOSTPRODUCTVARIANTSPECIFIC",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEPRICETOLERANCEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "VENDORINVOICELINEMATCHINGPOLICY",
+				"type": "Int32"
+			},
+			{
+				"name": "PACKINGMATERIALGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "BESTBEFOREPERIODDAYS",
+				"type": "Int32"
+			},
+			{
+				"name": "FREIGHTALLOCATIONGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESREBATEPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "POTENCYBASEATTRIBUTEVALUEENTRYEVENT",
+				"type": "Int32"
+			},
+			{
+				"name": "SHELFADVICEPERIODDAYS",
+				"type": "Int32"
+			},
+			{
+				"name": "SHELFLIFEPERIODDAYS",
+				"type": "Int32"
+			},
+			{
+				"name": "POTENCYBASEATTIBUTETARGETVALUE",
+				"type": "Decimal"
+			},
+			{
+				"name": "APPROVEDVENDORCHECKMETHOD",
+				"type": "Int32"
+			},
+			{
+				"name": "ISPHANTOM",
+				"type": "Int32"
+			},
+			{
+				"name": "PLANNINGFORMULAITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTIONTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "YIELDPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "PRIMARYVENDORACCOUNTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTIONGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTIONPOOLID",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTCATEGORYID",
+				"type": "String"
+			},
+			{
+				"name": "NECESSARYPRODUCTIONWORKINGTIMESCHEDULINGPROPERTYID",
+				"type": "String"
+			},
+			{
+				"name": "ISPURCHASEPRICEAUTOMATICALLYUPDATED",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTCOVERAGEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESPRICECALCULATIONMODEL",
+				"type": "Int32"
+			},
+			{
+				"name": "BASESALESPRICESOURCE",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESPRICECALCULATIONCONTRIBUTIONRATIO",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESPRICECALCULATIONCHARGESPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "CONSTANTSCRAPQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "VARIABLESCRAPPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "SERIALNUMBERGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SHIPPINGANDRECEIVINGSORTORDERCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTPRODUCTCONFIGURATIONID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTPRODUCTCOLORID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTPRODUCTSIZEID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTPRODUCTSTYLEID",
+				"type": "String"
+			},
+			{
+				"name": "TAREPRODUCTWEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "PACKINGDUTYQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "ARRIVALHANDLINGTIME",
+				"type": "Int32"
+			},
+			{
+				"name": "WAREHOUSEFILTERCODE",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEFILTERCODE2_",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEFILTERCODE3_",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEFILTERCODE4_",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEFILTERGROUP",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEFILTERGROUP2_",
+				"type": "String"
+			},
+			{
+				"name": "MAXIMUMPICKQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PACKAGECLASSID",
+				"type": "String"
+			},
+			{
+				"name": "PACKSIZECATEGORYID",
+				"type": "String"
+			},
+			{
+				"name": "PHYSICALDIMENSIONGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "WILLWORKCENTERPICKINGALLOWNEGATIVEINVENTORY",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTRECEIVINGQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "WAREHOUSEMOBILEDEVICEDESCRIPTIONLINE1",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSEMOBILEDEVICEDESCRIPTIONLINE2",
+				"type": "String"
+			},
+			{
+				"name": "RAWMATERIALPICKINGPRINCIPLE",
+				"type": "Int32"
+			},
+			{
+				"name": "UNITCONVERSIONSEQUENCEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "CATCHWEIGHTUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "MAXIMUMCATCHWEIGHTQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "MINIMUMCATCHWEIGHTQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "ISSALESPRICEADJUSTMENTALLOWED",
+				"type": "Int32"
+			},
+			{
+				"name": "CONTINUITYEVENTDURATION",
+				"type": "Int32"
+			},
+			{
+				"name": "CONTINUITYSCHEDULEID",
+				"type": "String"
+			},
+			{
+				"name": "ISRESTRICTEDFORCOUPONS",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTDIRECTDELIVERYWAREHOUSE",
+				"type": "String"
+			},
+			{
+				"name": "ISDELIVEREDDIRECTLY",
+				"type": "Int32"
+			},
+			{
+				"name": "ISEXEMPTFROMAUTOMATICNOTIFICATIONANDCANCELLATION",
+				"type": "Int32"
+			},
+			{
+				"name": "ISINSTALLMENTELIGIBLE",
+				"type": "Int32"
+			},
+			{
+				"name": "WILLPICKINGWORKBENCHAPPLYBOXINGLOGIC",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEREBATEPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SELLENDDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "SELLSTARTDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISSHIPALONEENABLED",
+				"type": "Int32"
+			},
+			{
+				"name": "SHIPSTARTDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "BARCODESETUPID",
+				"type": "String"
+			},
+			{
+				"name": "COMPARISONPRICEBASEUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "ISSCALEPRODUCT",
+				"type": "Int32"
+			},
+			{
+				"name": "ISPOSREGISTRATIONBLOCKED",
+				"type": "Int32"
+			},
+			{
+				"name": "POSREGISTRATIONBLOCKEDDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "POSREGISTRATIONPLANNEDBLOCKEDDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "POSREGISTRATIONACTIVATIONDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "KEYINPRICEREQUIREMENTSATPOSREGISTER",
+				"type": "Int32"
+			},
+			{
+				"name": "KEYINQUANTITYREQUIREMENTSATPOSREGISTER",
+				"type": "Int32"
+			},
+			{
+				"name": "MUSTKEYINCOMMENTATPOSREGISTER",
+				"type": "Int32"
+			},
+			{
+				"name": "ISZEROPRICEPOSREGISTRATIONALLOWED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISDISCOUNTPOSREGISTRATIONPROHIBITED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISPOSREGISTRATIONQUANTITYNEGATIVE",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTLIFECYCLESEASONCODE",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTLIFECYCLEVALIDFROMDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "PRODUCTLIFECYCLEVALIDTODATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISVARIANTSHELFLABELSPRINTINGENABLED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERORDEROVERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "TRANSFERORDERUNDERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "UNITCOST",
+				"type": "Decimal"
+			},
+			{
+				"name": "UNITCOSTDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "UNITCOSTQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "ISUNITCOSTINCLUDINGCHARGES",
+				"type": "Int32"
+			},
+			{
+				"name": "FIXEDCOSTCHARGES",
+				"type": "Decimal"
+			},
+			{
+				"name": "INVENTORYUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "ISINTERCOMPANYSALESUSAGEBLOCKED",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESSALESTAXITEMGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "WILLTOTALSALESDISCOUNTCALCULATIONINCLUDEPRODUCT",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESLINEDISCOUNTPRODUCTGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SALESMULTILINEDISCOUNTPRODUCTGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SALESSUPPLEMENTARYPRODUCTPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESCHARGEPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESOVERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESUNDERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESPRICINGPRECISION",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESPRICE",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESPRICEDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "SALESPRICEQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "SALESUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "ISSALESPRICEINCLUDINGCHARGES",
+				"type": "Int32"
+			},
+			{
+				"name": "FIXEDSALESPRICECHARGES",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASESALESTAXITEMGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ISINTERCOMPANYPURCHASEUSAGEBLOCKED",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASELINEDISCOUNTPRODUCTGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEMULTILINEDISCOUNTPRODUCTGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "WILLTOTALPURCHASEDISCOUNTCALCULATIONINCLUDEPRODUCT",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASESUPPLEMENTARYPRODUCTPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEOVERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEUNDERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEPRICINGPRECISION",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEPRICE",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEPRICEDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "PURCHASEPRICEQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASECHARGEPRODUCTGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISPURCHASEPRICEINCLUDINGCHARGES",
+				"type": "Int32"
+			},
+			{
+				"name": "FIXEDPURCHASEPRICECHARGES",
+				"type": "Decimal"
+			},
+			{
+				"name": "INTRASTATCOMMODITYCODE",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATCHARGEPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ORIGINCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "ORIGINSTATEID",
+				"type": "String"
+			},
+			{
+				"name": "APPROXIMATESALESTAXPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ITEMFISCALCLASSIFICATIONEXCEPTIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTFISCALINFORMATIONTYPE",
+				"type": "String"
+			},
+			{
+				"name": "ISICMSTAXAPPLIEDONSERVICE",
+				"type": "Int32"
+			},
+			{
+				"name": "PRODUCTTAXATIONORIGIN",
+				"type": "Int32"
+			},
+			{
+				"name": "ITEMFISCALCLASSIFICATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "SERVICEFISCALINFORMATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "ISSALESWITHHOLDINGTAXCALCULATED",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESITEMWITHHOLDINGTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ISPURCHASEWITHHOLDINGTAXCALCULATED",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEITEMWITHHOLDINGTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SALESGSTRELIEFCATEGORYCODE",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEGSTRELIEFCATEGORYCODE",
+				"type": "String"
+			},
+			{
+				"name": "INVENTORYGSTRELIEFCATEGORYCODE",
+				"type": "String"
+			},
+			{
+				"name": "NGPCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "SADGROUP",
+				"type": "String"
+			},
+			{
+				"name": "ISMANUALDISCOUNTPOSREGISTRATIONPROHIBITED",
+				"type": "Int32"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[EcoResReleasedProductV2Staging]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

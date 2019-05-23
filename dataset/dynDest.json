@@ -1,0 +1,25 @@
+{
+	"name": "dynDest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ESTableName": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "DynamicDatasets"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().ESTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

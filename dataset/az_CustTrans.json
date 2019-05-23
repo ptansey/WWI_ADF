@@ -1,0 +1,481 @@
+{
+	"name": "az_CustTrans",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "POSTINGPROFILECLOSE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ACCOUNTINGEVENT",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACCOUNTNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AMOUNTCUR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "AMOUNTMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "APPROVED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "APPROVER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BANKCENTRALBANKPURPOSECODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BANKCENTRALBANKPURPOSETEXT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BANKLCEXPORTLINE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BANKREMITTANCEFILEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BILLOFEXCHANGEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BILLOFEXCHANGESEQNUM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BILLOFEXCHANGESTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CANCELLEDPAYMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CASHDISCCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CASHPAYMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLOSED",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "COLLECTIONLETTER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COLLECTIONLETTERCODE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMPANYBANKACCOUNTID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CONTROLNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CORRECT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CURRENCYCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUSTBILLINGCLASSIFICATION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CUSTEXCHADJUSTMENTREALIZED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "CUSTEXCHADJUSTMENTUNREALIZED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "DEFAULTDIMENSION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DELIVERYMODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DIRECTDEBITMANDATE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DOCUMENTDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DOCUMENTNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DUEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EUROTRIANGULATION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXCHADJUSTMENT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "EXCHADJUSTMENTREPORTING",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "EXCHRATE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "EXCHRATESECOND",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "FIXEDEXCHRATE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INTEREST",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INVOICE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INVOICEPROJECT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LASTEXCHADJ",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LASTEXCHADJRATE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "LASTEXCHADJRATEREPORTING",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "LASTEXCHADJVOUCHER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTSETTLEACCOUNTNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTSETTLECOMPANY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTSETTLEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LASTSETTLEVOUCHER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MCRPAYMORDERID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OFFSETRECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ORDERACCOUNT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMMETHOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAYMMODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMREFERENCE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMSPEC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POSTINGPROFILE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PREPAYMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REASONREFRECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REPORTINGCURRENCYAMOUNT",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "REPORTINGCURRENCYCROSSRATE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "REPORTINGEXCHADJUSTMENTREALIZED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "REPORTINGEXCHADJUSTMENTUNREALIZED",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "RETAILCUSTTRANS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RETAILSTOREID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RETAILTERMINALID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RETAILTRANSACTIONID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SETTLEAMOUNTCUR",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SETTLEAMOUNTMST",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SETTLEAMOUNTREPORTING",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 6
+			},
+			{
+				"name": "SETTLEMENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TAXINVOICESALESID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "THIRDPARTYBANKACCOUNTID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANSTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TXT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOUCHER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAYMSCHEDID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECVERSION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MODIFIEDDATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MODIFIEDBY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MODIFIEDTRANSACTIONID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CREATEDDATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CREATEDBY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CREATEDTRANSACTIONID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CASHDISCBASEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPORTINGCURRENCYEXCHRATE",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "REPORTINGCURRENCYEXCHRATESECONDARY",
+				"type": "decimal",
+				"precision": 32,
+				"scale": 16
+			},
+			{
+				"name": "PAYMTERMID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[CUSTTRANS]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

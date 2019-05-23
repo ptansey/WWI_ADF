@@ -1,0 +1,17 @@
+{
+	"name": "TT_HcmPositionHierarchy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TimeTracking",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(TT) Time Tracking"
+		},
+		"type": "SqlServerTable",
+		"typeProperties": {
+			"tableName": "[dbo].[HcmPositionHierarchy]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

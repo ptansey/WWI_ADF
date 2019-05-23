@@ -1,0 +1,199 @@
+{
+	"name": "FO_HcmPositionStaging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "D365 Staging DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(FO) D365 Staging DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "ISPRIMARYPOSITION",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "POSITIONID",
+				"type": "String"
+			},
+			{
+				"name": "AVAILABLEFORASSIGNMENT",
+				"type": "DateTime"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "FULLTIMEEQUIVALENT",
+				"type": "Decimal"
+			},
+			{
+				"name": "DETAILEFFECTIVE",
+				"type": "DateTime"
+			},
+			{
+				"name": "DETAILEXPIRATION",
+				"type": "DateTime"
+			},
+			{
+				"name": "DEPARTMENTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "COMPENSATIONREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "JOBID",
+				"type": "String"
+			},
+			{
+				"name": "POSITIONTYPEID",
+				"type": "String"
+			},
+			{
+				"name": "TITLEID",
+				"type": "String"
+			},
+			{
+				"name": "ACTIVATION",
+				"type": "DateTime"
+			},
+			{
+				"name": "RETIREMENT",
+				"type": "DateTime"
+			},
+			{
+				"name": "WORKERASSIGNMENTSTART",
+				"type": "DateTime"
+			},
+			{
+				"name": "WORKERASSIGNMENTEND",
+				"type": "DateTime"
+			},
+			{
+				"name": "WORKERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "WORKERASSIGNMENTREASONCODEID",
+				"type": "String"
+			},
+			{
+				"name": "UNIONAGREEMENTEFFECTIVE",
+				"type": "DateTime"
+			},
+			{
+				"name": "UNIONAGREEMENTEXPIRATION",
+				"type": "DateTime"
+			},
+			{
+				"name": "WORKERNAME",
+				"type": "String"
+			},
+			{
+				"name": "LABORUNIONID",
+				"type": "String"
+			},
+			{
+				"name": "UNIONAGREEMENTNAME",
+				"type": "String"
+			},
+			{
+				"name": "UNIONAGREEMENTLEGALENTITY",
+				"type": "String"
+			},
+			{
+				"name": "REPORTSTOPOSITIONID",
+				"type": "String"
+			},
+			{
+				"name": "REPORTSTOEFFECTIVE",
+				"type": "DateTime"
+			},
+			{
+				"name": "REPORTSTOEXPIRATION",
+				"type": "DateTime"
+			},
+			{
+				"name": "PAIDBYLEGALENTITY",
+				"type": "String"
+			},
+			{
+				"name": "PAYCYCLEID",
+				"type": "String"
+			},
+			{
+				"name": "ANNUALREGULARHOURS",
+				"type": "Decimal"
+			},
+			{
+				"name": "PAYROLLDETAILEFFECTIVE",
+				"type": "DateTime"
+			},
+			{
+				"name": "PAYROLLDETAILEXPIRATION",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISSALARYGENERATED",
+				"type": "Int32"
+			},
+			{
+				"name": "AREEARNINGSGENERATEDFROMSCHEDULE",
+				"type": "Int32"
+			},
+			{
+				"name": "PAYPERIODOVERTIMEHOURS",
+				"type": "Decimal"
+			},
+			{
+				"name": "SCHEDULE",
+				"type": "String"
+			},
+			{
+				"name": "BENEFITID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTEARNINGCODEID",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			},
+			{
+				"name": "RECID",
+				"type": "Int64"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[HcmPositionStaging]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

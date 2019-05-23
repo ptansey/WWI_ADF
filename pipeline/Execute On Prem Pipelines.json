@@ -1,0 +1,31 @@
+{
+	"name": "Execute On Prem Pipelines",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "OP - Pipeline 1",
+						"type": "PipelineReference"
+					}
+				}
+			},
+			{
+				"name": "Execute Pipeline2",
+				"type": "ExecutePipeline",
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "OP - Pipeline 2",
+						"type": "PipelineReference"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "On-Prem Data Movement"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

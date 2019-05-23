@@ -1,0 +1,14 @@
+{
+	"name": "Azure Data Warehouse",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Azure Data Warehouse",
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": {
+				"type": "SecureString",
+				"value": "**********"
+			}
+		}
+	}
+}

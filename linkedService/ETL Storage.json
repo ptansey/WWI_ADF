@@ -1,0 +1,12 @@
+{
+	"name": "ETL Storage",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Storage account for polybase loads to DW",
+		"type": "AzureStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=wwietl;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFOQS1ERjAxLURWLUFaUl9lMzM4MTFjYS04YzA5LTRmODYtYTlmZC03OWUzNjU2ZjBhODEiDQp9"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "Update OnPrem DataMart Hourly",
+	"properties": {
+		"description": "Updating on premise data mart on schedule every hour. ",
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Execute On Prem Pipelines",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2018-04-12T22:05:00.279Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

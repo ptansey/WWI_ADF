@@ -1,0 +1,467 @@
+{
+	"name": "AZ_PurchPurchaseOrderHeaderV2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(AZ) Azure SQL DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "DEFAULTLEDGERDIMENSIONDISPLAYVALUE",
+				"type": "String"
+			},
+			{
+				"name": "ISDELIVERYADDRESSORDERSPECIFIC",
+				"type": "Int32"
+			},
+			{
+				"name": "SHIPPINGCARRIERSERVICEID",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEORDERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "BANKDOCUMENTTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "CASHDISCOUNTPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ISCHANGEMANAGEMENTACTIVE",
+				"type": "Int32"
+			},
+			{
+				"name": "ORDERVENDORACCOUNTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "LINEDISCOUNTVENDORGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTINGDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ACCOUNTINGDISTRIBUTIONTEMPLATENAME",
+				"type": "String"
+			},
+			{
+				"name": "CASHDISCOUNTCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONFIRMEDDELIVERYDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISCONSOLIDATEDINVOICETARGET",
+				"type": "Int32"
+			},
+			{
+				"name": "CONTACTPERSONID",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCYCODE",
+				"type": "String"
+			},
+			{
+				"name": "REQUESTEDDELIVERYDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "DELIVERYADDRESSNAME",
+				"type": "String"
+			},
+			{
+				"name": "TOTALDISCOUNTPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYMODEID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYTERMSID",
+				"type": "String"
+			},
+			{
+				"name": "EMAIL",
+				"type": "String"
+			},
+			{
+				"name": "TOTALDISCOUNTVENDORGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDDUEDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "AREPRICESINCLUDINGSALESTAX",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFAULTRECEIVINGWAREHOUSEID",
+				"type": "String"
+			},
+			{
+				"name": "DEFAULTRECEIVINGSITEID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEVENDORACCOUNTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "BUYERGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "LANGUAGEID",
+				"type": "String"
+			},
+			{
+				"name": "CHARGEVENDORGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISDELIVEREDDIRECTLY",
+				"type": "Int32"
+			},
+			{
+				"name": "MULTILINEDISCOUNTVENDORGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "NUMBERSEQUENCEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISONETIMEVENDOR",
+				"type": "Int32"
+			},
+			{
+				"name": "PAYMENTTERMSNAME",
+				"type": "String"
+			},
+			{
+				"name": "PAYMENTSCHEDULENAME",
+				"type": "String"
+			},
+			{
+				"name": "VENDORPAYMENTMETHODNAME",
+				"type": "String"
+			},
+			{
+				"name": "VENDORPAYMENTMETHODSPECIFICATIONNAME",
+				"type": "String"
+			},
+			{
+				"name": "VENDORPOSTINGPROFILEID",
+				"type": "String"
+			},
+			{
+				"name": "PRICEVENDORGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERNAME",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERPOOLID",
+				"type": "String"
+			},
+			{
+				"name": "ATTENTIONINFORMATION",
+				"type": "String"
+			},
+			{
+				"name": "VENDORTRANSACTIONSETTLEMENTTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEREBATEVENDORGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "SALESTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "EUSALESLISTCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "INTRASTATSTATISTICSPROCEDURECODE",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATPORTID",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATTRANSACTIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATTRANSPORTMODECODE",
+				"type": "String"
+			},
+			{
+				"name": "URL",
+				"type": "String"
+			},
+			{
+				"name": "TAXEXEMPTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "VENDORORDERREFERENCE",
+				"type": "String"
+			},
+			{
+				"name": "CONFIRMINGPURCHASEORDERCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONFIRMINGPURCHASEORDERCODELANGUAGEID",
+				"type": "String"
+			},
+			{
+				"name": "VENDORINVOICEDECLARATIONID",
+				"type": "String"
+			},
+			{
+				"name": "REASONCODE",
+				"type": "String"
+			},
+			{
+				"name": "REASONCOMMENT",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "FORMATTEDDELIVERYADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYBUILDINGCOMPLIMENT",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYCITYINKANA",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONISOCODE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTYID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDISTRICTNAME",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDUNSNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSLATITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ISDELIVERYADDRESSPRIVATE",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYADDRESSLONGITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSPOSTBOX",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTATEID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYSTREETINKANA",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTREETNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "IMPORTDECLARATIONNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "SHIPPINGCARRIERID",
+				"type": "String"
+			},
+			{
+				"name": "SHIPPINGCARRIERSERVICEGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSPORTATIONTEMPLATEID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSPORTATIONMODEID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICETYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSPORTATIONROUTEPLANID",
+				"type": "String"
+			},
+			{
+				"name": "ORDERERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "REQUESTERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTID",
+				"type": "String"
+			},
+			{
+				"name": "ZAKATCONTRACTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "GSTSELFBILLEDINVOICEAPPROVALNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSSTATE",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSCOUNTY",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERHEADERCREATIONMETHOD",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSPORTATIONDOCUMENTLINEID",
+				"type": "Guid"
+			},
+			{
+				"name": "DOCUMENTAPPROVALSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "FORMATTEDINVOICEADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "INVOICEADDRESSSTREETNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[PurchPurchaseOrderHeaderV2]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

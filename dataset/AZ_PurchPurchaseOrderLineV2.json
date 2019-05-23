@@ -1,0 +1,499 @@
+{
+	"name": "AZ_PurchPurchaseOrderLineV2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "(AZ) Azure SQL DB"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "DEFAULTLEDGERDIMENSIONDISPLAYVALUE",
+				"type": "String"
+			},
+			{
+				"name": "MAINACCOUNTIDDISPLAYVALUE",
+				"type": "String"
+			},
+			{
+				"name": "ISDELIVERYADDRESSORDERSPECIFIC",
+				"type": "Int32"
+			},
+			{
+				"name": "DEFINITIONGROUP",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTIONID",
+				"type": "String"
+			},
+			{
+				"name": "ISSELECTED",
+				"type": "Int32"
+			},
+			{
+				"name": "TRANSFERSTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "PURCHASEORDERLINESTATUS",
+				"type": "Int32"
+			},
+			{
+				"name": "SALESTAXITEMGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SALESTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTINGDISTRIBUTIONTEMPLATENAME",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDASSETVALUEMODELID",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDASSETGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDASSETNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDASSETTRANSACTIONTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "BARCODE",
+				"type": "String"
+			},
+			{
+				"name": "BARCODESETUPID",
+				"type": "String"
+			},
+			{
+				"name": "ISLINESTOPPED",
+				"type": "Int32"
+			},
+			{
+				"name": "ISPARTIALDELIVERYPREVENTED",
+				"type": "Int32"
+			},
+			{
+				"name": "CONFIRMEDDELIVERYDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "ISNEWFIXEDASSET",
+				"type": "Int32"
+			},
+			{
+				"name": "CUSTOMERREFERENCE",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMERREQUISITIONNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "REQUESTEDDELIVERYDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "DELIVERYADDRESSNAME",
+				"type": "String"
+			},
+			{
+				"name": "EXTERNALITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "GSTHSTTAXTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "BOMID",
+				"type": "String"
+			},
+			{
+				"name": "ITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ROUTEID",
+				"type": "String"
+			},
+			{
+				"name": "LINEAMOUNT",
+				"type": "Decimal"
+			},
+			{
+				"name": "LINEDISCOUNTAMOUNT",
+				"type": "Decimal"
+			},
+			{
+				"name": "LINENUMBER",
+				"type": "Int64"
+			},
+			{
+				"name": "LINEDISCOUNTPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "VENDORINVOICEMATCHINGPOLICY",
+				"type": "Int32"
+			},
+			{
+				"name": "MULTILINEDISCOUNTAMOUNT",
+				"type": "Decimal"
+			},
+			{
+				"name": "MULTILINEDISCOUNTPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "LINEDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "DIOTOPERATIONTYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "ALLOWEDOVERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ORDEREDCATCHWEIGHTQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEPRICEQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PROCUREMENTPRODUCTCATEGORYNAME",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "FIXEDPRICECHARGES",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEPRICE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ORDEREDPURCHASEQUANTITY",
+				"type": "Decimal"
+			},
+			{
+				"name": "PURCHASEUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "CONFIRMEDSHIPPINGDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "REQUESTEDSHIPPINGDATE",
+				"type": "DateTime"
+			},
+			{
+				"name": "PURCHASEREBATEVENDORGROUPID",
+				"type": "String"
+			},
+			{
+				"name": "TAX1099AMOUNT",
+				"type": "Decimal"
+			},
+			{
+				"name": "TAX1099STATEID",
+				"type": "String"
+			},
+			{
+				"name": "TAX1099STATEAMOUNT",
+				"type": "Decimal"
+			},
+			{
+				"name": "INTRASTATPORTID",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATCOMMODITYCODE",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATSTATISTICSPROCEDURECODE",
+				"type": "String"
+			},
+			{
+				"name": "ISINTRASTATTRIANGULARDEAL",
+				"type": "Int32"
+			},
+			{
+				"name": "INTRASTATTRANSACTIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "INTRASTATTRANSPORTMODECODE",
+				"type": "String"
+			},
+			{
+				"name": "ORIGINCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "ORIGINSTATEID",
+				"type": "String"
+			},
+			{
+				"name": "ALLOWEDUNDERDELIVERYPERCENTAGE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSLOCATIONID",
+				"type": "String"
+			},
+			{
+				"name": "FORMATTEDDELVERYADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYBUILDINGCOMPLIMENT",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCITY",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYCITYINKANA",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTRYREGIONISOCODE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSCOUNTYID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDISTRICTNAME",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSDUNSNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ISDELIVERYADDRESSPRIVATE",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYADDRESSLATITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSLONGITUDE",
+				"type": "Decimal"
+			},
+			{
+				"name": "DELIVERYADDRESSPOSTBOX",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTATEID",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTREET",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYSTREETINKANA",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSSTREETNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYADDRESSTIMEZONE",
+				"type": "Int32"
+			},
+			{
+				"name": "DELIVERYADDRESSZIPCODE",
+				"type": "String"
+			},
+			{
+				"name": "RECEIVINGWAREHOUSEID",
+				"type": "String"
+			},
+			{
+				"name": "RECEIVINGSITEID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTSIZEID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTCOLORID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTCONFIGURATIONID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTSTYLEID",
+				"type": "String"
+			},
+			{
+				"name": "ITEMBATCHNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORDEREDINVENTORYSTATUSID",
+				"type": "String"
+			},
+			{
+				"name": "TAX1099TYPE",
+				"type": "Int32"
+			},
+			{
+				"name": "TAX1099BOXID",
+				"type": "String"
+			},
+			{
+				"name": "UNITWEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "NGPCODE",
+				"type": "Int32"
+			},
+			{
+				"name": "WILLPRODUCTRECEIVINGCROSSDOCKPRODUCTS",
+				"type": "Int32"
+			},
+			{
+				"name": "CATCHWEIGHTUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "REQUESTERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTID",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTCATEGORYID",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTSALESCURRENCYCODE",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTTAXITEMGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTSALESUNITSYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTWORKERPERSONNELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTLINEPROPERTYID",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTSALESPRICE",
+				"type": "Decimal"
+			},
+			{
+				"name": "ISPROJECTPAYWHENPAID",
+				"type": "Int32"
+			},
+			{
+				"name": "INTRASTATSTATISTICVALUE",
+				"type": "Decimal"
+			},
+			{
+				"name": "INTRASTATSPECIALMOVEMENTCODE",
+				"type": "String"
+			},
+			{
+				"name": "WITHHOLDINGTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "ITEMWITHHOLDINGTAXGROUPCODE",
+				"type": "String"
+			},
+			{
+				"name": "PURCHASEORDERLINECREATIONMETHOD",
+				"type": "Int32"
+			},
+			{
+				"name": "CFOPCODE",
+				"type": "String"
+			},
+			{
+				"name": "SERVICEFISCALINFORMATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTACTIVITYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PARTITION",
+				"type": "String"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "String"
+			},
+			{
+				"name": "SYNCSTARTDATETIME",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[PurchPurchaseOrderLineV2]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

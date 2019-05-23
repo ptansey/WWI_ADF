@@ -1,0 +1,17 @@
+{
+	"name": "dynSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PREPROD Entity Store",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DynamicDatasets"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "dummyName"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

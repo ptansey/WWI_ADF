@@ -1,0 +1,231 @@
+{
+	"name": "sql_wwipac_date",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BIDATEGREGORIAN",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CALENDARNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DATE_",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DATEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFHALFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFMONTH",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFQUARTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFTENDAYS",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFTRIMESTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFWEEK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DAYOFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "HALFYEAR",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HALFYEAROFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MONTH",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MONTHGREGORIAN",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MONTHOFHALFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MONTHOFQUARTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MONTHOFTRIMESTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MONTHOFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUARTER",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "QUARTERGREGORIAN",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUARTEROFHALFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUARTEROFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TENDAYS",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TENDAYSOFHALFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TENDAYSOFMONTH",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TENDAYSOFQUARTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TENDAYSOFTRIMESTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TENDAYSOFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRIMESTER",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRIMESTEROFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WEEK",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WEEKOFHALFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WEEKOFMONTH",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WEEKOFQUARTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WEEKOFTRIMESTER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "WEEKOFYEAR",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "YEAR",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "YEARGREGORIAN",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WWIProjectAccountingCube_Date_]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

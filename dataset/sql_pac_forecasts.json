@@ -1,0 +1,372 @@
+{
+	"name": "sql_pac_forecasts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ACTIVITYNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "BUDGETACCRUEDREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCASHINFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCASHOUTFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCONSUMPTION",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCONSUMPTIONCOSTEXPENSE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCONSUMPTIONCOSTHOURS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCONSUMPTIONCOSTITEM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCOSTEXPENSE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCOSTHOUR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETCOSTITEM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETGROSSMARGIN",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETGROSSWIPCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETHOURS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETINVOICEDONACCOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETINVOICEDREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETNETCASHFLOW",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETNETWIP",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETPAYROLLALLOCATION",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETREVENUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETUPDATESAMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETUPDATESQUANTITY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETWIPCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETWIPINVOICEDONACCOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BUDGETWIPSALES",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CATEGORYID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLITEMID",
+				"type": "varchar"
+			},
+			{
+				"name": "FORECASTS_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "LEDGERTRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MODELID",
+				"type": "varchar"
+			},
+			{
+				"name": "ORIGINALBUDGETCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "POSTINGTYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJFUNDINGSOURCE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJGROUPID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJINVOICEPROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJTRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROJTRANSTYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "REMAININGBUDGETCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "REMAININGBUDGETDEVIATION",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "RESOURCE_",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RESOURCECATEGORY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TOTALBUDGETCOST",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TRANSACTIONTYPE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "POSTINGTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTIONTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "FORECASTS",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJTRANSTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_Activity_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ReleasedProducts_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_Customer_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_Projects_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectContracts_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectGroups_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectCategory_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ForecastModels_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectFundingSource_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedCostsView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Forecasts]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

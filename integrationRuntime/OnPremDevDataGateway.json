@@ -1,0 +1,7 @@
+{
+	"name": "OnPremDevDataGateway",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Gateway to on-prem DEV"
+	}
+}

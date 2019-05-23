@@ -1,0 +1,8799 @@
+{
+	"name": "DL to SQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "PAC_actuals",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_committedcosts",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Actuals]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTIVITYNUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "ACTUALACCRUEDLOSS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "ACTUALACCRUEDREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "ACTUALCASHINFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "ACTUALCASHOUTFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "ACTUALCONSUMPTION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "ACTUALCONSUMPTIONCOSTEXPENSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "ACTUALCONSUMPTIONCOSTHOURS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "ACTUALCONSUMPTIONCOSTITEM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "ACTUALCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "ACTUALCOSTCOMMITTED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "ACTUALCOSTEXPENSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "ACTUALCOSTHOUR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "ACTUALCOSTITEM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "ACTUALGROSSMARGIN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "ACTUALGROSSWIPCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "ACTUALHOURS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "ACTUALINVOICEDONACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "ACTUALINVOICEDREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "ACTUALNETCASHFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "ACTUALNETWIP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "ACTUALPAYROLLALLOCATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "ACTUALREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "ACTUALS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "ACTUALWIPCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "ACTUALWIPINVOICEDONACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "ACTUALWIPSALES",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "CATEGORYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "CUSTACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "EMPLITEMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "LEDGERTRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 35
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 36
+								},
+								"sink": {
+									"name": "POSTINGTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 37
+								},
+								"sink": {
+									"name": "PROJFUNDINGSOURCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 38
+								},
+								"sink": {
+									"name": "PROJGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 39
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 40
+								},
+								"sink": {
+									"name": "PROJINVOICEPROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 41
+								},
+								"sink": {
+									"name": "PROJTRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 42
+								},
+								"sink": {
+									"name": "PROJTRANSTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 43
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 44
+								},
+								"sink": {
+									"name": "RESOURCE_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 45
+								},
+								"sink": {
+									"name": "RESOURCECATEGORY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 46
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 47
+								},
+								"sink": {
+									"name": "POSTINGTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 48
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 49
+								},
+								"sink": {
+									"name": "ACTUALS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 50
+								},
+								"sink": {
+									"name": "PROJTRANSTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 51
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectCategory_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 52
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Projects_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 53
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Customer_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 54
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Activity_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 55
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 56
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectGroups_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 57
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectPlannedCostsView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 58
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 59
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 60
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectContracts_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 61
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectFundingSource_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 62
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ReleasedProducts_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_PAC_actuals",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_PAC_actuals",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_company",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_actuals",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting",
+							"recursive": false,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Company]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "COMPANY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "COMPANYNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "ISVIRTUAL_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "ISVIRTUAL",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_PAC_company",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_PAC_company",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_activity",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_ProjInvoiceOnAcc",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Activity]"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTIVITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "ACTIVITYDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "ACTIVITYTYPEDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "CATEGORY_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "CLOSED_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PHASE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "PLANDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "RESPONSIBILITYDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "TASKPRIORITY_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "CLOSED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "CATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "TASKPRIORITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Activity_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_PAC_activity",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_PAC_activity",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_committedcosts",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_currency",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_CommittedCosts]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTIVITYNUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "CATEGORYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "COMMITTEDAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "COMMITTEDCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "COMMITTEDCOSTS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "COMMITTEDCOSTUPDATESQUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "COMMITTEDDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "COMMITTEDHOURCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "COMMITTEDITEMCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "CURRENCYCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "CUSTACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "PROJGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "PROJINVOICEPROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "RESOURCE_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "RESOURCECATEGORY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "VENDACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "COMMITTEDCOSTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Vendor_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Projects_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Customer_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectContracts_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Activity_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectCategory_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectGroups_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_committedcosts",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_committedcosts",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_currency",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_customer",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Currency]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "CURRENCY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "CURRENCYNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "ISOCURRENCYCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "SYMBOL",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_currency",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_currency",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_customer",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_forecastmodels",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Customer]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ADDRESSDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "COMMISSIONSALESGROUPNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "COUNTRYORREGIONID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "COUNTY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "CREDITLIMIT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "CURRENCY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "CUSTOMER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "CUSTOMERGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "CUSTOMERGROUPNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "CUSTOMERINDUSTRY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "CUSTOMERREGION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "CUSTOMERSNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "INVOICINGANDDELIVERYONHOLD_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "SALESGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "TERMSOFPAYMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "WAREHOUSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "ZIPPOSTALCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "INVOICINGANDDELIVERYONHOLD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Customer_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_customer",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_customer",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_forecastmodels",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_ForecastModels]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "FORECASTMODELS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "ISDEFAULTMODELFORPROJECT_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "MODEL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "SUBMODEL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "SUBMODELID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "ISDEFAULTMODELFORPROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ForecastModels_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_forecastmodels",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_forecastmodels",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_forecasts",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_productline",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Forecasts]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTIVITYNUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "BUDGETACCRUEDREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "BUDGETCASHINFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "BUDGETCASHOUTFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "BUDGETCONSUMPTION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "BUDGETCONSUMPTIONCOSTEXPENSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "BUDGETCONSUMPTIONCOSTHOURS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "BUDGETCONSUMPTIONCOSTITEM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "BUDGETCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "BUDGETCOSTEXPENSE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "BUDGETCOSTHOUR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "BUDGETCOSTITEM",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "BUDGETGROSSMARGIN",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "BUDGETGROSSWIPCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "BUDGETHOURS",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "BUDGETINVOICEDONACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "BUDGETINVOICEDREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "BUDGETNETCASHFLOW",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "BUDGETNETWIP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "BUDGETPAYROLLALLOCATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "BUDGETREVENUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "BUDGETUPDATESAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "BUDGETUPDATESQUANTITY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "BUDGETWIPCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "BUDGETWIPINVOICEDONACCOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "BUDGETWIPSALES",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "CATEGORYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "CUSTACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "EMPLITEMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "FORECASTS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "LEDGERTRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "MODELID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 35
+								},
+								"sink": {
+									"name": "ORIGINALBUDGETCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 36
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 37
+								},
+								"sink": {
+									"name": "POSTINGTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 38
+								},
+								"sink": {
+									"name": "PROJFUNDINGSOURCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 39
+								},
+								"sink": {
+									"name": "PROJGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 40
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 41
+								},
+								"sink": {
+									"name": "PROJINVOICEPROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 42
+								},
+								"sink": {
+									"name": "PROJTRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 43
+								},
+								"sink": {
+									"name": "PROJTRANSTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 44
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 45
+								},
+								"sink": {
+									"name": "REMAININGBUDGETCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 46
+								},
+								"sink": {
+									"name": "REMAININGBUDGETDEVIATION",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 47
+								},
+								"sink": {
+									"name": "RESOURCE_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 48
+								},
+								"sink": {
+									"name": "RESOURCECATEGORY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 49
+								},
+								"sink": {
+									"name": "TOTALBUDGETCOST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 50
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 51
+								},
+								"sink": {
+									"name": "POSTINGTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 52
+								},
+								"sink": {
+									"name": "TRANSACTIONTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 53
+								},
+								"sink": {
+									"name": "FORECASTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 54
+								},
+								"sink": {
+									"name": "PROJTRANSTYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 55
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Activity_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 56
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ReleasedProducts_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 57
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Customer_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 58
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Projects_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 59
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectContracts_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 60
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectGroups_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 61
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectCategory_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 62
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ForecastModels_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 63
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectFundingSource_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 64
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectPlannedCostsView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 65
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectEstimatesView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 66
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectActivityCompletedCostView_FK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 67
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectPlannedEffortView_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_forecasts",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_forecasts",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_productline",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_projectcontracts",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_ProductLine]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DIMENSIONATTRIBUTE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "KEY_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "VALUE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_productline",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_productline",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_projectcontracts",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_resource",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_ProjectContracts]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "INVOICECUSTOMER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PROJECTCONTRACTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "SALESCURRENCY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_ProjectContracts_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_projectcontracts",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_projectcontracts",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_resource",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_valuestream",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Resource]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "RESOURCE_",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "RESOURCEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "RESOURCENAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "RESOURCETYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "RESOURCETYPE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_resource",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_resource",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_valuestream",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_vendor",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_ValueStream]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DIMENSIONATTRIBUTE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "KEY_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "VALUE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_valuestream",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_valuestream",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PAC_vendor",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[ProjectAccountingCube_Vendor]"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ADDRESSDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "COUNTRYORREGIONID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "COUNTY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "CURRENCY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "INVOICEACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "LOCALLYOWNED_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "MINORITYOWNED_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "ONETIMESUPPLIER_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "OWNERISASERVICEVETERAN_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "SMALLBUSINESS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "TERMSOFPAYMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "VENDOR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "VENDORGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "VENDORGROUPNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "VENDORHOLD_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "VENDORISDIVERSE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "VENDORSNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "WAREHOUSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "WOMANOWNER_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "ZIPORPOSTALCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "VENDORHOLD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "WOMANOWNER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "MINORITYOWNED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "ONETIMESUPPLIER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "SMALLBUSINESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "LOCALLYOWNED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "OWNERISASERVICEVETERAN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "VENDORISDIVERSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 35
+								},
+								"sink": {
+									"name": "ProjectAccountingCube_Vendor_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_pac_vendor",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_pac_vendor",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "FRTD_FinancialReportingPeriodByDate",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "PAC_activity",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[FinancialReportingTransactionData_FinancialReportingPeriodByDate]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "FINANCIALREPORTINGPERIODBYDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "FISCALCALENDAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "FISCALCALENDARCOUNT",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "FISCALCALENDARPERIOD",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "FISCALCALENDARYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "GREGORIANDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PERIODBYYEARSEQUENCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "PERIODNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "PERIODSEQUENCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "PERIODSHORTNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "QUARTER_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "QUARTERSEQUENCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "YEARNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "YEARSEQUENCE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "QUARTER",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_frtd_FinancialReportingPeriodByDate",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_frtd_PeriodByDate",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_Date",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_projectentity",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_Date_]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "BIDATEGREGORIAN",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "CALENDARNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "DATE_",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "DATEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "DAYOFHALFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "DAYOFMONTH",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "DAYOFQUARTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "DAYOFTENDAYS",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "DAYOFTRIMESTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "DAYOFWEEK",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "DAYOFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "HALFYEAR",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "HALFYEAROFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "MONTH",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "MONTHGREGORIAN",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "MONTHOFHALFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "MONTHOFQUARTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "MONTHOFTRIMESTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "MONTHOFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "QUARTER",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "QUARTERGREGORIAN",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "QUARTEROFHALFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "QUARTEROFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "TENDAYS",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "TENDAYSOFHALFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "TENDAYSOFMONTH",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "TENDAYSOFQUARTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "TENDAYSOFTRIMESTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "TENDAYSOFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "TRIMESTER",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "TRIMESTEROFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "WEEK",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 35
+								},
+								"sink": {
+									"name": "WEEKOFHALFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 36
+								},
+								"sink": {
+									"name": "WEEKOFMONTH",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 37
+								},
+								"sink": {
+									"name": "WEEKOFQUARTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 38
+								},
+								"sink": {
+									"name": "WEEKOFTRIMESTER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 39
+								},
+								"sink": {
+									"name": "WEEKOFYEAR",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 40
+								},
+								"sink": {
+									"name": "YEAR",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 41
+								},
+								"sink": {
+									"name": "YEARGREGORIAN",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_date",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_date",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_projectentity",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_ProjForecastOnAcct",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_ProjectEntity]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "DIMENSIONDISPLAYVALUE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "DIMENSIONRECORDID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "PROJECTID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_projectentity",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_projectentity",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_ProjForecastOnAcct",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_ProjForecastOnAcc]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "CURRENCYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "FORECASTONACCTRANSCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "MODELID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PROJECTDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "QTY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "SALESPRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "TRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "TRANSID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "TXT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "WWIProjectAccountingCube_WWIProjects_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_ProjForecastOnAcct",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_ProjForecastOnAcct",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_ProjInvoiceOnAcc",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_WWIProjOnAccTransView",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_ProjInvoiceOnAcc]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "AMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "AMOUNTMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "CURRENCYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "INVOICEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "PROJINVOICEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "TRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "TRANSID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "WWIProjectAccountingCube_WWIProjects_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_ProjInvoiceOnAcc",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_ProjInvoiceOnAcc",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_projprojectwbsentity",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_Date",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_ProjProjectWBSEntity]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTIVITYDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "ACTIVITYNUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "PROJECTID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "WBSID",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_projprojectwbsentity",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_projprojectwbsentity",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_WWIProjControlPeriodTableView",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_WWIProjControlPeriodTableView]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "CONTRACTVALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PERIODSTATUS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "PERIODTO",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PERIODSTATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "WWIProjectAccountingCube_WWIProjects_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_WWIProjControlPeriodTableView",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_WWIProjControlPeriodTableView",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_wwiprojects",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_projprojectwbsentity",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_WWIProjects]"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "ETL Storage",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "ACTUALENDDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "ARNOTES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "CUSTOMERACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "DIMENSION_",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "ESTIMATEPROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PARENTPROJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "PROJECTCONTRACTID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "PROJECTCONTROLLER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "PROJECTMANAGER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "PROJECTNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "PROJECTTYPE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "PROJVALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "SALESMANAGER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "SORTFIELD1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "SORTFIELD2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "SORTFIELD3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "STAGE_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "WIPNOTES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "WORKERRESPONSIBLE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "WORKERRESPONSIBLEFINANCIAL",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "WORKERRESPONSIBLESALES",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "WWIPROJECTS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "STAGE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "PROJECTTYPE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_wwiprojects",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_wwiprojects",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "WWIPAC_WWIProjOnAccTransView",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "WWIPAC_WWIProjControlPeriodTableView",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[WWIProjectAccountingCube_WWIProjOnAccTransView]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "ROW_UNIQUEKEY",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "CURRENCYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "PROJCATEGORY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "PROJECTDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "PROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "PROJINVOICESTATUS_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "SALESPRICE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "TRANSACTIONDESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "TRANSACTIONORIGIN_VALUE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "TRANSCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "TRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "TRANSACTIONORIGIN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "PROJINVOICESTATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "WWIProjectAccountingCube_WWIProjects_FK",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_wwipac_WWIProjOnAccTransView",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_wwipac_WWIProjOnAccTransView",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "TEST CustTrans",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[CUSTTRANS]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "POSTINGPROFILECLOSE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTINGPROFILECLOSE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTINGEVENT",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "ACCOUNTINGEVENT",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNTCUR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AMOUNTCUR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "AMOUNTMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AMOUNTMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVED",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "APPROVED",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "APPROVER",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "APPROVER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BANKCENTRALBANKPURPOSECODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BANKCENTRALBANKPURPOSECODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BANKCENTRALBANKPURPOSETEXT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BANKCENTRALBANKPURPOSETEXT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BANKLCEXPORTLINE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BANKLCEXPORTLINE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BANKREMITTANCEFILEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BANKREMITTANCEFILEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLOFEXCHANGEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLOFEXCHANGEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLOFEXCHANGESEQNUM",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BILLOFEXCHANGESEQNUM",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLOFEXCHANGESTATUS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BILLOFEXCHANGESTATUS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CANCELLEDPAYMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CANCELLEDPAYMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHPAYMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CASHPAYMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOSED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CLOSED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "COLLECTIONLETTER",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "COLLECTIONLETTER",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "COLLECTIONLETTERCODE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "COLLECTIONLETTERCODE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "COMPANYBANKACCOUNTID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COMPANYBANKACCOUNTID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTROLNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTROLNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CORRECT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CORRECT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCYCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCYCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTBILLINGCLASSIFICATION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "CUSTBILLINGCLASSIFICATION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTEXCHADJUSTMENTREALIZED",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTEXCHADJUSTMENTREALIZED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTEXCHADJUSTMENTUNREALIZED",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CUSTEXCHADJUSTMENTUNREALIZED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERYMODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELIVERYMODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DOCUMENTDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DOCUMENTDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DOCUMENTNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DOCUMENTNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EUROTRIANGULATION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EUROTRIANGULATION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHADJUSTMENT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHADJUSTMENT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHADJUSTMENTREPORTING",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHADJUSTMENTREPORTING",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATESECOND",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATESECOND",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FIXEDEXCHRATE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "FIXEDEXCHRATE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INTEREST",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INTEREST",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEPROJECT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INVOICEPROJECT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTEXCHADJ",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LASTEXCHADJ",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTEXCHADJRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LASTEXCHADJRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTEXCHADJRATEREPORTING",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "LASTEXCHADJRATEREPORTING",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTEXCHADJVOUCHER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LASTEXCHADJVOUCHER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTSETTLEACCOUNTNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LASTSETTLEACCOUNTNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTSETTLECOMPANY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LASTSETTLECOMPANY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTSETTLEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LASTSETTLEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTSETTLEVOUCHER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LASTSETTLEVOUCHER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MCRPAYMORDERID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MCRPAYMORDERID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFFSETRECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "OFFSETRECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMMETHOD",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PAYMMETHOD",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMMODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMMODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMREFERENCE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMREFERENCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMSPEC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMSPEC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PREPAYMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PREPAYMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "REASONREFRECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "REASONREFRECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGCURRENCYAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGCURRENCYAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGCURRENCYCROSSRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGCURRENCYCROSSRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGEXCHADJUSTMENTREALIZED",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGEXCHADJUSTMENTREALIZED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGEXCHADJUSTMENTUNREALIZED",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGEXCHADJUSTMENTUNREALIZED",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RETAILCUSTTRANS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RETAILCUSTTRANS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RETAILSTOREID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RETAILSTOREID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RETAILTERMINALID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RETAILTERMINALID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RETAILTRANSACTIONID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RETAILTRANSACTIONID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SETTLEAMOUNTCUR",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SETTLEAMOUNTCUR",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SETTLEAMOUNTMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SETTLEAMOUNTMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SETTLEAMOUNTREPORTING",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SETTLEAMOUNTREPORTING",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SETTLEMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SETTLEMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXINVOICESALESID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAXINVOICESALESID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "THIRDPARTYBANKACCOUNTID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "THIRDPARTYBANKACCOUNTID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "TRANSDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSTYPE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TRANSTYPE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TXT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TXT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VOUCHER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VOUCHER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMSCHEDID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMSCHEDID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATAAREAID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTITION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MODIFIEDDATETIME",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "MODIFIEDDATETIME",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "MODIFIEDBY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MODIFIEDBY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MODIFIEDTRANSACTIONID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "MODIFIEDTRANSACTIONID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDBY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATEDBY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDTRANSACTIONID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "CREATEDTRANSACTIONID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCBASEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CASHDISCBASEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGCURRENCYEXCHRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGCURRENCYEXCHRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REPORTINGCURRENCYEXCHRATESECONDARY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPORTINGCURRENCYEXCHRATESECONDARY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMTERMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMTERMID",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "test_CustTrans",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "az_CustTrans",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "TEST CustInvoiceJour",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "TEST CustTrans",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[CUSTINVOICEJOUR]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BACKORDER",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BACKORDER",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BANKLCEXPORTLINE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BANKLCEXPORTLINE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLOFLADINGID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BILLOFLADINGID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CASHDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCBASEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CASHDISCBASEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CASHDISCDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCPERCENT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CASHDISCPERCENT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTACTPERSONID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTACTPERSONID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COVSTATUS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "COVSTATUS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCYCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCYCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTGROUP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMERREF",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMERREF",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERYNAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELIVERYNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERYPOSTALADDRESS",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DELIVERYPOSTALADDRESS",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DLVMODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DLVMODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DLVTERM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DLVTERM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DOCUMENTDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DOCUMENTDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DOCUMENTNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DOCUMENTNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EINVOICEACCOUNTCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EINVOICEACCOUNTCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EINVOICELINESPECIFIC",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EINVOICELINESPECIFIC",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ENDDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENDDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENDDISCMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENDDISCMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERPRISENUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENTERPRISENUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EUSALESLIST",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EUSALESLIST",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATESECONDARY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATESECONDARY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "FIXEDDUEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "FIXEDDUEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GIROTYPE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GIROTYPE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INCLTAX",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INCLTAX",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERCOMPANYCOMPANYID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERCOMPANYCOMPANYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERCOMPANYPOSTED",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INTERCOMPANYPOSTED",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERCOMPANYPURCHID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTERCOMPANYPURCHID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTRASTATDISPATCH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTRASTATDISPATCH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INTRASTATFULFILLMENTDATE_HU",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INTRASTATFULFILLMENTDATE_HU",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVENTLOCATIONID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVENTLOCATIONID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICEACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEAMOUNTMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEAMOUNTMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEPOSTALADDRESS",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "INVOICEPOSTALADDRESS",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEROUNDOFF",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEROUNDOFF",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEROUNDOFFMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEROUNDOFFMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICINGNAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICINGNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ISCORRECTION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ISCORRECTION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LANGUAGEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LANGUAGEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LEDGERVOUCHER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LEDGERVOUCHER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LISTCODE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "LISTCODE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LOG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MCRDUEAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MCRDUEAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MCREMAIL",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MCREMAIL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MCRPAYMAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MCRPAYMAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBERSEQUENCEGROUP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NUMBERSEQUENCEGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ONACCOUNTAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ONACCOUNTAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ONETIMECUSTOMER",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ONETIMECUSTOMER",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PARMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMDAYID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMDAYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENTSCHED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENTSCHED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PREPAYMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PREPAYMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PRINTEDORIGINALS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PRINTEDORIGINALS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PRINTMGMTSITEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRINTMGMTSITEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROFORMA",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PROFORMA",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PURCHASEORDER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PURCHASEORDER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QTY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "QTY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "RCSALESLIST_UK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RCSALESLIST_UK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REASONTABLEREF",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "REASONTABLEREF",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECEIPTDATECONFIRMED_ES",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RECEIPTDATECONFIRMED_ES",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "REFNUM",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "REFNUM",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RETURNITEMNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RETURNITEMNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RETURNREASONCODEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RETURNREASONCODEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RETURNSTATUS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RETURNSTATUS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "REVERSECHARGEAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REVERSECHARGEAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REVERSEDRECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "REVERSEDRECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESBALANCE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SALESBALANCE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESBALANCEMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SALESBALANCEMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALESID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESORIGINID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALESORIGINID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESTYPE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SALESTYPE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SHIPCARRIERBLINDSHIPMENT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SHIPCARRIERBLINDSHIPMENT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCEDOCUMENTHEADER",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "SOURCEDOCUMENTHEADER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCEDOCUMENTLINE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "SOURCEDOCUMENTLINE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMLINEDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMLINEDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMLINEDISCMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMLINEDISCMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMMARKUP",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMMARKUP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMMARKUPMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMMARKUPMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMTAX",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMTAX",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMTAXMST",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMTAXMST",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXGROUP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAXGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXINVOICESALESID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAXINVOICESALESID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXITEMGROUP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAXITEMGROUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXPRINTONINVOICE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TAXPRINTONINVOICE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXSPECIFYBYLINE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TAXSPECIFYBYLINE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSPORTATIONDOCUMENT",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TRANSPORTATIONDOCUMENT",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TRIANGULATION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TRIANGULATION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "UPDATED",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "UPDATED",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "VATNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VATNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLUME",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VOLUME",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "WEIGHT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "WEIGHT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "WORKERSALESTAKER",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "WORKERSALESTAKER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SENTELECTRONICALLY",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SENTELECTRONICALLY",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PROVISIONALASSESSMENT_IN",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PROVISIONALASSESSMENT_IN",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DATAAREAID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTITION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MODIFIEDDATETIME",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "MODIFIEDDATETIME",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDBY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATEDBY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BISEDIPROCESS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "BISEDIPROCESS",
+									"type": "Int32"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "test_CustInvoiceJour",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "az_CustInvoiceJour",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "TEST ProjInvoiceJour",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "TEST CustInvoiceJour",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table [dbo].[PROJINVOICEJOUR]"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ORDERACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CASHDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASHDISCCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CASHDISCDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CASHDISCPERCENT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CASHDISCPERCENT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "COSTVALUE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "COSTVALUE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCYID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CURRENCYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DEFAULTDIMENSION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERYNAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELIVERYNAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERYPOSTALADDRESS",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DELIVERYPOSTALADDRESS",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "DIRECTDEBITMANDATE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DLVMODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DLVMODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DLVTERM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DLVTERM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DOCUMENTDATE_W",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DOCUMENTDATE_W",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "DUEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EINVOICEACCOUNTCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EINVOICEACCOUNTCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EINVOICELINESPECIFIC",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EINVOICELINESPECIFIC",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ENDDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ENDDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTERPRISENUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENTERPRISENUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EUSALESLIST",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EUSALESLIST",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EXCHRATESECONDARY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "EXCHRATESECONDARY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GIROTYPE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GIROTYPE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INTERCOMPANYPOSTED",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INTERCOMPANYPOSTED",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INTRASTATADDVALUE_LV",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INTRASTATADDVALUE_LV",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INTRASTATDISPATCHID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INTRASTATDISPATCHID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEACCOUNT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICEACCOUNT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEDATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "INVOICEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICENUMBERINGCODE_LT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INVOICENUMBERINGCODE_LT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICEROUNDOFF",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "INVOICEROUNDOFF",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LANGUAGEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LANGUAGEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LEDGERVOUCHER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LEDGERVOUCHER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LISTCODEID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "LISTCODEID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NARRATION_BR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NARRATION_BR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBERSEQUENCEGROUPID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NUMBERSEQUENCEGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ONACCOUNTAMOUNT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ONACCOUNTAMOUNT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PARMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMDAYID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMDAYID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENTSCHED",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENTSCHED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PORT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PORT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTINGJOURNALID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTINGJOURNALID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "POSTINGPROFILE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRINTEDORIGINALS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PRINTEDORIGINALS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJGROUPID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJINVOICEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJINVOICEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJINVOICEPROJID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROJINVOICEPROJID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROJINVOICETYPE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PROJINVOICETYPE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPOSALID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPOSALID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PSAENDDATEMAXINVOICEID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PSAENDDATEMAXINVOICEID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PSAINVOICEFORMATS",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PSAINVOICEFORMATS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "QTY",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "QTY",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "REASONTABLEREF",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "REASONTABLEREF",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESDATE_CZ",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SALESDATE_CZ",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SALESORDERBALANCE",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SALESORDERBALANCE",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SMASPECINDEXCALC",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SMASPECINDEXCALC",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SOURCEDOCUMENTHEADER",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "SOURCEDOCUMENTHEADER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMLINEDISC",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMLINEDISC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMMARKUP",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMMARKUP",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SUMTAX",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SUMTAX",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXGROUPID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TAXGROUPID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXINFORMATION_IN",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TAXINFORMATION_IN",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXPRINTONINVOICE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TAXPRINTONINVOICE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXSPECIFYBYLINE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TAXSPECIFYBYLINE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TAXSPECIFYTOTAL",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TAXSPECIFYTOTAL",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSPORTATIONDOCUMENT",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TRANSPORTATIONDOCUMENT",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TRIANGULATION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TRIANGULATION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "VATNUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "VATNUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLUME",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "VOLUME",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VOUCHERNUMBERSEQUENCETABLE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "VOUCHERNUMBERSEQUENCETABLE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "WEIGHT",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "WEIGHT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "WHOISAUTHOR_LT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WHOISAUTHOR_LT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "INVOICETYPE_MY",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INVOICETYPE_MY",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NOTETYPE_MY",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "NOTETYPE_MY",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTACTPERSONID_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONTACTPERSONID_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTPURCHASEORDER_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTPURCHASEORDER_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTREF_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTREF_NO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SENTELECTRONICALLY",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "SENTELECTRONICALLY",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DATAAREAID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATAAREAID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTITION",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PARTITION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECID",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "RECID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RECVERSION",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ISPROFORMA",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ISPROFORMA",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATEDDATETIME",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "test_ProjInvoiceJour",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "az_ProjInvoiceJour",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Copy DataLakeToSQL"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

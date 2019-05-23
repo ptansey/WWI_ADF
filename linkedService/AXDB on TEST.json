@@ -1,0 +1,11 @@
+{
+	"name": "AXDB on TEST",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=wwi-test-appdbserver-2c63c205.DATABASE.WINDOWS.NET;initial catalog=wwi-test_axdb_a4b8dfc9bac972d9;user id=axdbadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFOQS1ERjAxLURWLUFaUl81YTc5NmQ2NC02YTYzLTRlMDYtYjFhMi01ZTgzODA5MjM5M2IiDQp9"
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+	"name": "sql_wwipac_WWIProjOnAccTransView",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CURRENCYID",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PROJCATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROJID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJINVOICESTATUS_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SALESPRICE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TRANSACTIONDESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTIONORIGIN_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANSCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANSACTIONORIGIN",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJINVOICESTATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "WWIProjectAccountingCube_WWIProjects_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WWIProjectAccountingCube_WWIProjOnAccTransView]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

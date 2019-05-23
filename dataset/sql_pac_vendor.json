@@ -1,0 +1,171 @@
+{
+	"name": "sql_pac_vendor",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azure SQL Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DataLakeToSQL"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_UNIQUEKEY",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ADDRESSDESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRYORREGIONID",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY",
+				"type": "varchar"
+			},
+			{
+				"name": "DATAAREAID",
+				"type": "varchar"
+			},
+			{
+				"name": "INVOICEACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCALLYOWNED_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "MINORITYOWNED_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ONETIMESUPPLIER_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "OWNERISASERVICEVETERAN_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PARTITION",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RECID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SMALLBUSINESS_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "TERMSOFPAYMENT",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDOR",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDORGROUP",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDORGROUPNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDORHOLD_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "VENDORISDIVERSE_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "VENDORSNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "WAREHOUSE",
+				"type": "varchar"
+			},
+			{
+				"name": "WOMANOWNER_VALUE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ZIPORPOSTALCODE",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDORHOLD",
+				"type": "varchar"
+			},
+			{
+				"name": "WOMANOWNER",
+				"type": "varchar"
+			},
+			{
+				"name": "MINORITYOWNED",
+				"type": "varchar"
+			},
+			{
+				"name": "ONETIMESUPPLIER",
+				"type": "varchar"
+			},
+			{
+				"name": "SMALLBUSINESS",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCALLYOWNED",
+				"type": "varchar"
+			},
+			{
+				"name": "OWNERISASERVICEVETERAN",
+				"type": "varchar"
+			},
+			{
+				"name": "VENDORISDIVERSE",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountingCube_Vendor_FK",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[ProjectAccountingCube_Vendor]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
